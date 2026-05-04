@@ -14,6 +14,7 @@ Script Purpose:
 -- Transformation: Standardized gender from numeric code (1.0 or 2.0) to descriptive labels (Male or Female)
 -- Extracted DATE format from TIMESTAMP columns
 -- ============================================================================
+
 CREATE OR REPLACE TABLE `ecommerce-growth.processed.processed_dim_user` AS (
   SELECT 
       user_id,
@@ -39,6 +40,7 @@ CREATE OR REPLACE TABLE `ecommerce-growth.processed.processed_dim_user` AS (
 -- Transformation: Converted 'grass_date' (bigint) into proper DATE format 
 -- Standardized login_datetime.
 -- ============================================================================
+
 CREATE OR REPLACE TABLE `ecommerce-growth.processed.processed_login_event` AS (
   SELECT
     user_id,
@@ -54,6 +56,7 @@ CREATE OR REPLACE TABLE `ecommerce-growth.processed.processed_login_event` AS (
 -- Transformation: Translated multiple Integer flags (is_web_checkout, 
 -- is_official_shop, etc.) into descriptive categorical strings
 -- ============================================================================
+
 CREATE OR REPLACE TABLE `ecommerce-growth.processed.processed_order_item_mart` AS (
   SELECT
     order_id,
