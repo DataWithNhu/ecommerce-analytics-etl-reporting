@@ -9,8 +9,8 @@ The Processed Data is the business-level data representation, structured to supp
 - **Description:** Snapshot of user profile.
 - **Columns:**
 
-| Column Name                      | Data Type     | Description                                                                   |
-|----------------------------------|-----------------------------------------------------------------------------------------------|
+| Column Name         | Data Type     | Description                                                                                |
+|---------------------|---------------|--------------------------------------------------------------------------------------------|
 | user_id                          | INT           | Unique user_id for each user                                                  |
 | user_name                        | STRING        | User's username                                                               |
 | gender                           | FLOAT         | User's gender: 1 is Male, 2 is Female, Null is Unknown                        |
