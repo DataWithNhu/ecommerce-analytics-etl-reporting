@@ -42,35 +42,35 @@ The Processed Data is the business-level data representation, structured to supp
 
 | Column Name                         | Data Type     | Description                                                                                   |
 |---------------------|---------------|-----------------------------------------------------------------------------------------------|
-| order_id                            | NVARCHAR(50)  | order id of the order                                                                                                                                                    |
+| order_id                            | INT  | order id of the order                                                                                                                                                    |
 | item_id                             | INT           | item id of the items purchased in the order Note: for bundle deal, the bundle is split into the actual item, and the actual itemid of the physical item is recorded      |
 | model_id                            | INT           | model id of the models purchased in the order Note: for bundle deal, the bundle is split into the actual item, and the actual model id of the physical item is recorded  |
-| buyer_id                            | DATE          | unique userid of the buyer                                                                                                                                               |
-| checkout_channel                    | DATE          | Indicates which platform is the checkout performed on                                                                                                                    |
-| is_web_checkout                     | DATE          | Whether the order was checked out from web portal (web include PC and Mobile Web)                                                                                        |
+| buyer_id                            | INT         | unique userid of the buyer                                                                                                                                               |
+| checkout_channel                    | STRING          | Indicates which platform is the checkout performed on                                                                                                                    |
+| is_web_checkout                     | INT          | Whether the order was checked out from web portal (web include PC and Mobile Web)                                                                                        |
 | create_timestamp                    | INT           | Timestamp of the order when its created (epoch time)                                                                                                                     |
-| create_datetime                     | INT           | Datetime of the order when its created (local time in string)                                                                                                            |
-| complete_datetime                   | INT           | Datetime of the order when its completed / accepted by the buyer after receiving all the parcels for the order (local time in string)                                    |
+| create_datetime                     | TIMESTAMP           | Datetime of the order when its created (local time in string)                                                                                                            |
+| complete_datetime                   | TIMESTAMP           | Datetime of the order when its completed / accepted by the buyer after receiving all the parcels for the order (local time in string)                                    |
 | release_timestamp                   | INT           | Time when the order should already be completed and escrow started                                                                                                       |
-| release_datetime                    | INT           | Time when the order should already be completed and escrow started                                                                                                       |
-| cancel_datetime                     | INT           | Datetime of the order when its canceled by the buyer (local time in string)                                                                                              |
+| release_datetime                    | TIMESTAMP           | Time when the order should already be completed and escrow started                                                                                                       |
+| cancel_datetime                     | TIMESTAMP           | Datetime of the order when its canceled by the buyer (local time in string)                                                                                              |
 | is_net_order                        | INT           | 1 is net, 0 is cancelled                                                                                                                                                 |  
 | shop_id                             | INT           | unique id of the shop                                                                                                                                                    |
-| shop_name                           | INT           | name of the shop                                                                                                                                                         |
+| shop_name                           | STRING           | name of the shop                                                                                                                                                         |
 | is_official_shop                    | INT           | whether the order is from official shop shop                                                                                                                             |
 | is_cb_shop                          | INT           | Whether the order is from a cross border shop                                                                                                                            |
 | seller_id                           | INT           | unique userid of the seller                                                                                                                                              |
-| seller_name                         | INT           | username of the seller                                                                                                                                                   |
-| seller_shipping_address_state       | INT           | State of the shipping address of the seller                                                                                                                              |
-| seller_shipping_address_city        | INT           | City of the shipping address of the seller                                                                                                                               |
-| buyer_shipping_address_state        | INT           | State of the shipping address of the seller                                                                           |
-| buyer_shipping_address_city         | INT           | City of the shipping address of the seller     |
-| gmv_usd                             | INT           | Gross mechandise value of the order in USD     |
+| seller_name                         | STRING           | username of the seller                                                                                                                                                   |
+| seller_shipping_address_state       | STRING           | State of the shipping address of the seller                                                                                                                              |
+| seller_shipping_address_city        | STRING           | City of the shipping address of the seller                                                                                                                               |
+| buyer_shipping_address_state        | STRING           | State of the shipping address of the seller                                                                           |
+| buyer_shipping_address_city         | STRING           | City of the shipping address of the seller     |
+| gmv_usd                             | FLOAT           | Gross mechandise value of the order in USD     |
 | item_amount                         | INT           | quantity of an item in order      |
-| main_category                       | INT           | category name of the item      |
-| estimate_shipping_fee_usd           | INT           | The shipping fee calculated by Shopee system based on the buyer and seller location, parcel size      |
-| buyer_paid_shipping_fee_usd         | INT           | Buyer paid shipping fee in USD     |
-| estimate_shipping_rebate_amt_usd    | INT           | Platform subsidy shipping fee in USD      |
-| voucher_rebate_usd                  | INT           | Platform subsidy product price by voucher in USD    |
-| fsv_promotion_id                    | INT           | Freeship voucher ID, null if not using     |
-| pv_promotion_id                     | INT           | Platform product discount voucher ID, null if not using      |
+| main_category                       | STRING           | category name of the item      |
+| estimate_shipping_fee_usd           | FLOAT           | The shipping fee calculated by Shopee system based on the buyer and seller location, parcel size      |
+| buyer_paid_shipping_fee_usd         | FLOAT           | Buyer paid shipping fee in USD     |
+| estimate_shipping_rebate_amt_usd    | FLOAT           | Platform subsidy shipping fee in USD      |
+| voucher_rebate_usd                  | FLOAT           | Platform subsidy product price by voucher in USD    |
+| fsv_promotion_id                    | FLOAT           | Freeship voucher ID, null if not using     |
+| pv_promotion_id                     | FLOAT           | Platform product discount voucher ID, null if not using      |
