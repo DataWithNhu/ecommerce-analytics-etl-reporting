@@ -1,4 +1,4 @@
-# ecommerce-analytics-etl-reporting
+# Ecommerce Growth Analytics Reporting
 Welcome to the Ecommerce Growth Analytics Repository! 🚀 
 
 This project showcases End-to-end E-commerce ETL: Raw data to Growth Insights. Designed to track and optimize ecommerce growth metrics (GMV, DAU, Buyers). Automated to drive insights into buyer behavior and platform growth for global-scale e-commerce platforms.
