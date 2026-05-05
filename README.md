@@ -22,4 +22,20 @@ Open-Source
 - BI tools: Looker to visualize automatically loaded data on BigQuery by DBT earlier. In this specific project, I use Tableau for esthestics
 - Draw.io: Design data architecture, star schemas, flows, and diagrams.
 
+----------------------------------------------------------------------------
 
+
+🛡️ License
+
+This project is licensed under the MIT License. You are free to use, modify, and share this project with proper attribution.
+
+
+----------------------------------------------------------------------------
+
+
+🌟 About Me
+
+Hi there! I'm Nhu Pham. I am an aspiring Product & Growth Analyst with a deep interest in the Ecommerce and Gaming industries.
+My focus is on transforming complex behavioral data into actionable growth strategies. Through this portfolio, I aim to showcase my technical rigor in SQL and data modeling, as well as my ability to drive measurable business impact.
+
+Let's stay in touch! Feel free to connect with me via LinkedIn
