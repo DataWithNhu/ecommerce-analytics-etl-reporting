@@ -16,10 +16,10 @@ This project showcases End-to-end E-commerce ETL: Raw data to Growth Insights. D
 
 Open-Source
 
-Datasets: Access csv files via https://github.com/DataWithNhu/ecommerce-analytics-etl-reporting/tree/main/datasets
-BigQuery: Store the csv files and query SQL.
-DBT: Write .sql files to transform data and automate ETL pipeline.
-BI tools: Looker to visualize automatically loaded data on BigQuery by DBT earlier. In this specific project, I use Tableau for esthestics
-Draw.io: Design data architecture, star schemas, flows, and diagrams.
+- Datasets: Access csv files via https://github.com/DataWithNhu/ecommerce-analytics-etl-reporting/tree/main/datasets
+- BigQuery: Store the csv files and query SQL.
+- DBT: Write .sql files to transform data and automate ETL pipeline.
+- BI tools: Looker to visualize automatically loaded data on BigQuery by DBT earlier. In this specific project, I use Tableau for esthestics
+- Draw.io: Design data architecture, star schemas, flows, and diagrams.
 
 
