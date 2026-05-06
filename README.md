@@ -8,7 +8,8 @@ This project showcases End-to-end E-commerce ETL: Raw data to Growth Insights. D
 
 
 ## 🏗️ Data Schema
-<img width="1015" height="822" alt="Screenshot 2026-05-05 at 21 35 09" src="https://github.com/user-attachments/assets/3e89824d-fe50-4947-b051-11ff20979ee8" />
+<img width="876" height="702" alt="Screenshot 2026-05-06 at 18 29 07" src="https://github.com/user-attachments/assets/01583365-9892-4ce2-a07b-d247e97d7a58" />
+
 
 ----------------------------------------------------------------------------
 
