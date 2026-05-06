@@ -34,7 +34,7 @@ SELECT DISTINCT checkout_platform FROM `ecommerce-growth.raw_data.order_item_mar
 SELECT * FROM `ecommerce-growth.raw_data.order_item_mart` WHERE gmv_usd < 0;
 
 -- Check 2: Chronological Integrity (Cancelled before Created?)
-SELECT * FROM `ecommerce-growth.growth.order_item_mart` 
+SELECT * FROM `ecommerce-growth.raw_data.order_item_mart` 
 WHERE cancel_datetime < create_datetime;
 
 -- Check 3: State Consistency (Cancelled orders shouldn't have a completion timestamp)
