@@ -15,7 +15,7 @@ Script Purpose:
 -- Extracted DATE format from TIMESTAMP columns
 -- ============================================================================
 
-CREATE OR REPLACE TABLE `ecommerce-growth.processed.dim_user` AS (
+CREATE OR REPLACE TABLE `ecommerce-growth.processed_data.dim_user` AS (
   SELECT 
       user_id,
       user_name,
@@ -31,7 +31,7 @@ CREATE OR REPLACE TABLE `ecommerce-growth.processed.dim_user` AS (
       DATE(registration_datetime) AS registration_date,
       default_delivery_address_state,
       default_delivery_address_city
-  FROM `ecommerce-growth.processed.raw_dim_user`
+  FROM `ecommerce-growth.raw_data.raw_dim_user`
 ); 
 
 
@@ -41,14 +41,20 @@ CREATE OR REPLACE TABLE `ecommerce-growth.processed.dim_user` AS (
 -- Standardized login_datetime.
 -- ============================================================================
 
-CREATE OR REPLACE TABLE `ecommerce-growth.processed.login_event` AS (
+CREATE OR REPLACE TABLE `ecommerce-growth.processed_data.dwd_login_event` AS (
   SELECT
     user_id,
+    -- Standardizing date formats for easier time-series analysis
     PARSE_DATE('%Y%m%d', CAST(grass_date AS STRING)) AS grass_date,
-    DATE(login_datetime) AS login_datetime,
+    DATE(login_datetime) AS login_date, -- Renamed to login_date for clarity
     login_platform
-  FROM `ecommerce-growth.processed.raw_login_event`
-); 
+  FROM `ecommerce-growth.raw_data.dwd_login_event`
+  WHERE user_id IS NOT NULL 
+  QUALIFY ROW_NUMBER() OVER(
+    PARTITION BY user_id, DATE(login_datetime) 
+    ORDER BY grass_date DESC
+  ) = 1
+);
 
 
 -- ============================================================================
@@ -57,7 +63,7 @@ CREATE OR REPLACE TABLE `ecommerce-growth.processed.login_event` AS (
 -- is_official_shop, etc.) into descriptive categorical strings
 -- ============================================================================
 
-CREATE OR REPLACE TABLE `ecommerce-growth.processed.order_item_mart` AS (
+CREATE OR REPLACE TABLE `ecommerce-growth.processed_data.order_item_mart` AS (
   SELECT
     order_id,
     item_id,
@@ -112,5 +118,5 @@ CREATE OR REPLACE TABLE `ecommerce-growth.processed.order_item_mart` AS (
     voucher_rebate_usd,
     fsv_promotion_id,
     pv_promotion_id
-  FROM `ecommerce-growth.processed.raw_order_item_mart`
+  FROM `ecommerce-growth.raw_data.order_item_mart`
 ); 
