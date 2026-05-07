@@ -53,7 +53,7 @@ The Processed Data is the business-level data representation, structured to supp
 | complete_date                       | DATE          | Date of the order when its completed / accepted by the buyer after receiving all the parcels for the order (local time in string)                                                                                          |
 | release_date                        | DATE          | Date when the order should already be completed and escrow started            |
 | cancel_date                         | DATE          | Date of the order when its canceled by the buyer (local time in string)       |
-| is_net_order                        | STRING        | net or cancelled                                                              |  
+| is_net_order                        | STRING        | successful or cancelled                                                              |  
 | shop_id                             | INT           | unique id of the shop                                                         |
 | shop_name                           | STRING        | name of the shop                                                              |
 | is_official_shop                    | INT           | whether the order is from official shop shop                                  |
