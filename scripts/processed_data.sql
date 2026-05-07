@@ -83,7 +83,7 @@ CREATE OR REPLACE TABLE `ecommerce-growth.processed_data.order_item_mart` AS (
     DATE(cancel_datetime) AS cancel_date,
 
     CASE
-      WHEN CAST(is_net_order AS STRING) = '1' THEN 'net'
+      WHEN CAST(is_net_order AS STRING) = '1' THEN 'successful'
       WHEN CAST(is_net_order AS STRING) = '0' THEN 'cancelled'
       ELSE 'Unknown'
     END AS is_net_order,
